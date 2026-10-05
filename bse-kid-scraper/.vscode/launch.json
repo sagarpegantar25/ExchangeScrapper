@@ -1,0 +1,39 @@
+{
+  // Press F5 in VS Code and pick one of these (like launch profiles in Visual Studio).
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Dry run - yesterday (no Claude, no email)",
+      "type": "debugpy", "request": "launch", "module": "src.main",
+      "args": ["--dry-run"], "cwd": "${workspaceFolder}", "console": "integratedTerminal", "justMyCode": true
+    },
+    {
+      "name": "Dry run - specific date",
+      "type": "debugpy", "request": "launch", "module": "src.main",
+      "args": ["--dry-run", "--date", "${input:runDate}"], "cwd": "${workspaceFolder}", "console": "integratedTerminal"
+    },
+    {
+      "name": "One document, with Claude, no email",
+      "type": "debugpy", "request": "launch", "module": "src.main",
+      "args": ["--date", "${input:runDate}", "--limit", "1", "--skip-email", "--force"], "cwd": "${workspaceFolder}", "console": "integratedTerminal"
+    },
+    {
+      "name": "Full run - yesterday (sends email)",
+      "type": "debugpy", "request": "launch", "module": "src.main",
+      "args": [], "cwd": "${workspaceFolder}", "console": "integratedTerminal"
+    },
+    {
+      "name": "Check configuration",
+      "type": "debugpy", "request": "launch", "module": "src.main",
+      "args": ["--check"], "cwd": "${workspaceFolder}", "console": "integratedTerminal"
+    },
+    {
+      "name": "Run tests (pytest)",
+      "type": "debugpy", "request": "launch", "module": "pytest",
+      "args": ["-v"], "cwd": "${workspaceFolder}", "console": "integratedTerminal"
+    }
+  ],
+  "inputs": [
+    { "id": "runDate", "type": "promptString", "description": "Allotment date (DD-MM-YYYY)", "default": "29-09-2026" }
+  ]
+}
