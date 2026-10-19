@@ -1,0 +1,15 @@
+# secrets and local environment
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+# run data
+downloads/
+extracted/
+processed/*
+!processed/.gitkeep
+logs/*
+!logs/.gitkeep
+# old projects (to be deleted)
+bse-kid-scraper/
+ExchangeScrapper/

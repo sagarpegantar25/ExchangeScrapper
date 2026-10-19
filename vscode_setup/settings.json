@@ -1,0 +1,11 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  // PowerShell is blocked on this machine, which makes F5 fail with
+  // "Timed out waiting for launcher to connect". Use Command Prompt instead.
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.automationProfile.windows": { "path": "C:\\Windows\\System32\\cmd.exe" },
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+  "files.exclude": { "**/__pycache__": true, "**/.pytest_cache": true }
+}
